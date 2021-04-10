@@ -29,8 +29,6 @@ sentences = tokenizer.texts_to_matrix(sentences)
 padded_docs = pad_sequences(sentences, maxlen=max_review_len)
 
 X_train, X_test, y_train, y_test = train_test_split(padded_docs, y, test_size=0.25, random_state=1000)
-X_train_tokens = tokenizer.texts_to_sequences(X_train)
-X_test_tokens = tokenizer.texts_to_sequences(X_test)
 
 
 model = Sequential()
