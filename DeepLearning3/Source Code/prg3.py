@@ -34,7 +34,7 @@ model = Sequential()
 model.add(Embedding(vocab_size, 50, input_length=max_review_len))
 model.add(Flatten())
 model.add(layers.Dense(300,input_dim=vocab_size, activation='relu'))
-model.add(layers.Dense(3, activation='sigmoid')) #changing number of neuron to 2 as we have only two labels Pos and Neg
+model.add(layers.Dense(3, activation='sigmoid'))
 model.compile(loss='sparse_categorical_crossentropy',optimizer='adam',metrics=['acc'])
 history=model.fit(X_train,y_train, epochs=5, verbose=True, validation_data=(X_test,y_test), batch_size=256)
 
